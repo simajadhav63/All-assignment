@@ -1,11 +1,25 @@
-let div1 = document.getElementById("div1");
+let circle = document.getElementById("container");
+let square = document.getElementById("square");
 
-  div1.style.backgroundColor = "yellow"; 
-  div1.style.color = "blue"; 
-  div1.style.margin = "20px";
-  div1.style.padding = "10px"; 
-  div1.style.fontSize = "18px"; 
-  div1.style.fontWeight = "bold"; 
-  div1.style.height = "200px"; 
-  div1.style.width = "300px"; 
- 
+let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+  function changeColor() {
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+    circle.style.backgroundColor = randomColor;
+  }
+
+  function changeShape() {
+    
+    square.style.width = "0";
+    square.style.height = "0";
+    square.style.borderBottom = "50px solid blue";
+    square.style.borderLeft = "25px solid transparent";
+    square.style.borderRight = "25px solid transparent";
+    square.style.backgroundColor = "transparent"; // Ensure background is transparent before changing shape
+    square.style.borderBottom = shapes[shapeIndex].borderBottom;
+    square.style.borderLeft = shapes[shapeIndex].borderLeft;
+    square.style.borderRight = shapes[shapeIndex].borderRight;
+
+    shapeIndex = (shapeIndex + 1) % shapes.length;
+    
+  }
