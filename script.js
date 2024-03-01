@@ -1,25 +1,59 @@
-let circle = document.getElementById("container");
-let square = document.getElementById("square");
+const crl = document.querySelector('.white_circle');
+const hd = document.querySelector('.heading');
 
-let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
-  function changeColor() {
-    let randomColor = colors[Math.floor(Math.random() * colors.length)];
-    circle.style.backgroundColor = randomColor;
-  }
+crl.addEventListener("click", function() {
+    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
 
-  function changeShape() {
-    
-    square.style.width = "0";
-    square.style.height = "0";
-    square.style.borderBottom = "50px solid blue";
-    square.style.borderLeft = "25px solid transparent";
-    square.style.borderRight = "25px solid transparent";
-    square.style.backgroundColor = "transparent"; // Ensure background is transparent before changing shape
-    square.style.borderBottom = shapes[shapeIndex].borderBottom;
-    square.style.borderLeft = shapes[shapeIndex].borderLeft;
-    square.style.borderRight = shapes[shapeIndex].borderRight;
+    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
 
-    shapeIndex = (shapeIndex + 1) % shapes.length;
-    
-  }
+
+});
+
+let tog_right = false;
+
+function toggle() {
+    var div = document.getElementById("white_round");
+
+    if (!tog_right) {
+        div.style.transform = "translateX(70px)";
+    } else {
+        div.style.transform = "none";
+    }
+    tog_right = !tog_right;
+
+}
+
+const sun_tog = document.querySelector('#sun_png')
+
+sun_tog.addEventListener("click", function () {
+    var div = document.getElementById("white_round");
+
+    if (!tog_right) {
+        div.style.transform = "translateX(70px)";
+    } else {
+        div.style.transform = "none";
+    }
+    tog_right = !tog_right;
+
+    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+
+    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
+});
+
+const moon_tog = document.querySelector('#moon_png')
+
+moon_tog.addEventListener("click", function () {
+    var div = document.getElementById("white_round");
+
+    if (!tog_right) {
+        div.style.transform = "translateX(70px)";
+    } else {
+        div.style.transform = "none";
+    }
+    tog_right = !tog_right;
+
+    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+
+    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
+});

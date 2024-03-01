@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark mode Project</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <div id="container" style="position: relative; width: 150px; height: 150px; margin-top: 200px; left: 600px; background-color: green; border-radius: 50%;">
-    <div id="square" style="position: absolute; top: 50%; left: 50%; width: 80px; height: 80px; background-color: white; transform: translate(-50%, -50%);"></div>
-  </div>
-  
-  <button style="display: flex; justify-content: center; align-items: center; margin-left: 630px; margin-top: 20px; width: 100px; height: 25px; background-color: aqua; border: 1px solid rgb(198, 198, 250); border-radius: 5px;" onclick="changeColor()">Change Color</button>
-  <button style="display: flex; justify-content: center; align-items: center; margin-left: 630px; margin-top: 20px; width: 100px; height: 25px; background-color: aqua; border: 1px solid rgb(198, 198, 250); border-radius: 5px;" onclick="changeShape()">Change Shape</button>
+  <div class="container">
+    <div class="button">
+    <img src="./sun.png" alt="sun" id="sun_png">
+    <img src="./moon.png" alt="moon" id="moon_png">
+    <div class="white_circle" onclick="toggle()"  id="white_round"></div>
+    
+    </div>
+    <h1 id="heading">Click on the Toggle Button</h1>
+    </div>
 
-
-
-
-  <script src="script.js"></script>
-
+    <script src="./script.js"></script>
 </body>
 </html>
