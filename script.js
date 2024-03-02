@@ -1,59 +1,41 @@
-const crl = document.querySelector('.white_circle');
-const hd = document.querySelector('.heading');
+const pressedKeyDisplay = document.getElementById("pressedKey");
+const keyCodeDisplay = document.getElementById("keyCode");
+const keyHistoryList = document.getElementById("keyHistory");
 
+// Map for special key codes
+const specialKeys = {
+    8: "Backspace",
+    9: "Tab",
+    13: "Enter",
+    16: "Shift",
+    17: "Ctrl",
+    18: "Alt",
+    20: "Caps Lock",
+    27: "Escape",
+    32: "Space",
+    37: "Arrow Left",
+    38: "Arrow Up",
+    39: "Arrow Right",
+    40: "Arrow Down",
+    46: "Delete",
+};
 
-crl.addEventListener("click", function() {
-    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
+// Function to display pressed key and its keycode
+function displayKeyPress(event) {
+    const pressedKey = event.key;
+    const keyCode = event.keyCode;
 
-    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
+    // Display pressed key
+    pressedKeyDisplay.textContent = pressedKey;
 
+    // Display key code
+    keyCodeDisplay.textContent = keyCode;
 
-});
-
-let tog_right = false;
-
-function toggle() {
-    var div = document.getElementById("white_round");
-
-    if (!tog_right) {
-        div.style.transform = "translateX(70px)";
-    } else {
-        div.style.transform = "none";
-    }
-    tog_right = !tog_right;
-
+    // Add pressed key to key history
+    const keyListItem = document.createElement("li");
+    keyListItem.textContent = pressedKey + " (KeyCode: " + keyCode + ")";
+    keyHistoryList.appendChild(keyListItem);
 }
 
-const sun_tog = document.querySelector('#sun_png')
-
-sun_tog.addEventListener("click", function () {
-    var div = document.getElementById("white_round");
-
-    if (!tog_right) {
-        div.style.transform = "translateX(70px)";
-    } else {
-        div.style.transform = "none";
-    }
-    tog_right = !tog_right;
-
-    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
-
-    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
-});
-
-const moon_tog = document.querySelector('#moon_png')
-
-moon_tog.addEventListener("click", function () {
-    var div = document.getElementById("white_round");
-
-    if (!tog_right) {
-        div.style.transform = "translateX(70px)";
-    } else {
-        div.style.transform = "none";
-    }
-    tog_right = !tog_right;
-
-    document.body.style.backgroundColor = document.body.style.backgroundColor === 'black' ? 'white' : 'black';
-
-    heading.style.color = heading.style.color === 'white' ? 'black' : 'white';
-});
+// Add event listener for keydown event
+document.addEventListener("keydown", displayKeyPress);

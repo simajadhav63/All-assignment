@@ -1,29 +1,22 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>age calculator</title>
-    <link rel="stylesheet" href="style.css">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Press Display</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="main">
-    <input type="date" id="birthdate" name="birthdate">
-    
-    <button onclick="calculateAge()">Calculate</button>
+
+<div class="container">
+    <p>You Pressed <span id="pressedKey"></span></p>
 </div>
+<div id="main">
 
-
-        <span id="age"></span>
-       
-        <span id="age"></span>
-        
-        <span id="age"></span>
-        
-
-
-    <script src="scripts.js"></script>
+    <p><span id="keyCode"></span></p>
+    
+</div>
+<script src="script.js"></script>
 </body>
 </html>
